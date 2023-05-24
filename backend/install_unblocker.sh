@@ -14,12 +14,16 @@ echo -e "${BLUE}但是本安装脚本仅提供中文和英文支持${PLAIN}"
 echo "1.简体中文(zh_cn)"
 echo "2.English(en_us)"
 echo "3.Vietnamese(vi_vn)"
-read -e language
-if [ $language != "1" ] && [ $language != "2" ] && [ $language != "3" ]; then
-    echo "输入错误，已退出 | Input error, exit"
-    exit;
-fi
-if [ $language == '1' ]; then
+start(){
+  read -e language
+  if [ $language != "1" ] && [ $language != "2" ] && [ $language != "3" ]; then
+      echo "输入错误，请重新输入。 | Input error, please input again."
+      start
+  else body
+  fi
+}
+body(){
+  if [ $language == '1' ]; then
   echo "以全新方式管理你的 Apple ID，基于密保问题的自动化Apple ID检测&解锁程序程序"
   echo "项目地址：github.com/pplulee/appleid_auto"
   echo "项目交流TG群：@appleunblocker"
@@ -103,3 +107,4 @@ else
   echo "Check status: docker logs appleauto"
 fi
 exit 0
+}
