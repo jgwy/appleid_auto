@@ -13,10 +13,9 @@ echo -e "${BLUE}However no support for language other than Chinese and English i
 echo -e "${BLUE}但是本安装脚本仅提供中文和英文支持${PLAIN}"
 echo "1.简体中文(zh_cn)"
 echo "2.English(en_us)"
-echo "3.Vietnamese(vi_vn)"
 start(){
   read -e language
-  if [ $language != "1" ] && [ $language != "2" ] && [ $language != "3" ]; then
+  if [ $language != "1" ] && [ $language != "2" ]; then
       echo "输入错误，请重新输入。 | Input error, please input again."
       start
   else body
